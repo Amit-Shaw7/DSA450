@@ -2,7 +2,7 @@ package Basics;
 
 public class O02ReverseANumber {
 
-    public static int reverseBruteForce(int x) {
+    public static int reverse(int x) {
         long rev = 0;
         int original = x;
         if (x < 0) {
@@ -30,6 +30,6 @@ public class O02ReverseANumber {
 
     public static void main(String[] args) {
         int num = 1534236496;
-        System.out.println(reverseBruteForce(num));
+        System.out.println(reverse(num));
     }
 }
