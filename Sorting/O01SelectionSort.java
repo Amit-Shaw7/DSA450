@@ -45,3 +45,7 @@ public class O01SelectionSort {
         arr[j] = temp;
     }
 }
+
+/*
+ * TC - O(N^2)
+ */

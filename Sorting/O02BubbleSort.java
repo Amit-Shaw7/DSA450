@@ -39,3 +39,9 @@ public class O02BubbleSort {
         arr[j] = temp;
     }
 }
+
+
+/*
+ * TC - O(N^2)
+ * But f the array is sorted it will take - O(N)
+ */
