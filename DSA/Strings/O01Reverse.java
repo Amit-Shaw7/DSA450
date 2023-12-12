@@ -1,4 +1,4 @@
-package Strings;
+package DSA.Strings;
 
 public class O01Reverse {
     public static String reverse(String s) {

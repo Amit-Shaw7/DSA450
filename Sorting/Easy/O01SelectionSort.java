@@ -1,4 +1,4 @@
-package Sorting;
+package Sorting.Easy;
 
 /*
  * Selection Sort -> As the name suggest select the smallest element and keep it in the start of the array 
