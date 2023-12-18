@@ -4,21 +4,21 @@ import java.util.Arrays;
 
 public class O02MergeSortInPlace {
     public static void main(String[] args) {
-        int[] arr = { 5, 4, 3, 2, 1 };
+        int[] arr = { 9, 3, 6, 2, 0 }; // 9 3 6 2 0
         System.out.println(Arrays.toString(arr));
         mergeSortInPlace(arr, 0, arr.length);
         System.out.println(Arrays.toString(arr));
     }
 
     public static void mergeSortInPlace(int[] arr, int st, int end) {
-        if (st >= end) {
+        if (end - st == 1) {
             return;
         }
 
         int mid = st + (end - st) / 2;
 
         mergeSortInPlace(arr, st, mid);
-        mergeSortInPlace(arr, mid + 1, end);
+        mergeSortInPlace(arr, mid, end);
         merge(arr, st, mid, end);
     }
 
@@ -31,20 +31,24 @@ public class O02MergeSortInPlace {
         while (i < mid && j < end) {
             if (arr[i] > arr[j]) {
                 temp[k] = arr[j];
-                i++;
+                j++;
             } else {
                 temp[k] = arr[i];
-                j++;
+                i++;
             }
             k++;
         }
 
         while (i < mid) {
-            temp[k++] = arr[i++];
+            temp[k] = arr[i];
+            k++;
+            i++;
         }
 
         while (j < end) {
-            temp[k++] = arr[j++];
+            temp[k] = arr[j];
+            k++;
+            j++;
         }
 
         for (int l = 0; l < temp.length; l++) {
