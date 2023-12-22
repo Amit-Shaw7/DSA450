@@ -7,6 +7,8 @@ public class O02SecondLargestAndSmallest {
         int[] arr = { 13, 15, 13, 12, 2, 45, 76, 5, 3 };
         int[] res = findSecondLargestAndSmallest(arr);
         System.out.println(Arrays.toString(res));
+        int[] resOptimal = findSecondLargestAndSmallestOptimal(arr);
+        System.out.println(Arrays.toString(resOptimal));
     }
 
     public static int[] findSecondLargestAndSmallest(int[] arr) {
@@ -52,4 +54,52 @@ public class O02SecondLargestAndSmallest {
 
         return new int[] { largest, smallest };
     }
+
+    public static int[] findSecondLargestAndSmallestOptimal(int[] arr){
+
+        int secondSmall = findSecondSmall(arr);
+        int secondLarge = findSecondLarge(arr);
+
+        return new int[]{secondLarge , secondSmall};
+    }
+
+    public static int findSecondSmall(int[] arr) {
+        int smallest = Integer.MAX_VALUE;
+        int secondSmallest = Integer.MAX_VALUE;
+
+        if (arr.length < 2) {
+            return -1;
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] < smallest) {
+                secondSmallest = smallest;
+                smallest = arr[i];
+            } else if (arr[i] < secondSmallest && arr[i] != smallest) {
+                secondSmallest = arr[i];
+            }
+        }
+        return secondSmallest;
+    }
+
+    public static int findSecondLarge(int[] arr) {
+        int largest = Integer.MIN_VALUE;
+        int secondLargest = Integer.MIN_VALUE;
+
+        if (arr.length < 2) {
+            return -1;
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > largest) {
+                secondLargest = largest;
+                largest = arr[i];
+            } else if (arr[i] > secondLargest && arr[i] != largest) {
+                secondLargest = arr[i];
+            }
+        }
+
+        return secondLargest;
+    }
+
 }
