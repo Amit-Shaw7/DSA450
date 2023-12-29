@@ -1,15 +1,17 @@
 package DSA.Arrays.Medium;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class O01TwoSum {
     public static void main(String[] args) {
-        int[] arr = { 4, 2, 1, 2, 2};
-        int target = 5;
+        int[] arr = { 3, 2, 4 };
+        int target = 6;
 
         findTwosumBrute(arr, target); // Brute - TC - O(N^2) || SC - O(1)
         findTwosumBetter(arr, target); // Better1 - TC - O(N + N) || SC - O(N)
         findTwosumBetter2(arr, target); // Better 2 - TC - O(N) || SC - O(N)
+        findTwosumOptimal(arr, target);
     }
 
     public static void findTwosumBrute(int[] arr, int target) {
@@ -51,7 +53,7 @@ public class O01TwoSum {
         System.out.println("NO");
     }
 
-    public static void findTwosumBetter2(int[] arr , int target){
+    public static void findTwosumBetter2(int[] arr, int target) {
         int n = arr.length;
         HashMap<Integer, Integer> map = new HashMap<>();
 
@@ -59,12 +61,34 @@ public class O01TwoSum {
             int num = arr[i];
             int moreNeeded = target - num;
 
-            if(map.containsKey(moreNeeded)){
+            if (map.containsKey(moreNeeded)) {
                 System.out.println("YES");
                 return;
             }
 
             map.put(arr[i], i);
+        }
+
+        System.out.println("NO");
+    }
+
+    public static void findTwosumOptimal(int[] arr, int target) {
+        Arrays.sort(arr);
+        int n = arr.length;
+        int left = 0;
+        int right = n - 1;
+
+        while (left < right) {
+            int sum = arr[left] + arr[right];
+
+            if (sum == target) {
+                System.out.println("YES" + left + " " + right );
+                return;
+            } else if (target > sum) {
+                left++;
+            } else {
+                right--;
+            }
         }
 
         System.out.println("NO");
