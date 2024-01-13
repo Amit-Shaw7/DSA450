@@ -5,13 +5,14 @@ import java.util.Arrays;
 public class O02SecondLargestAndSmallest {
     public static void main(String[] args) {
         int[] arr = { 13, 15, 13, 12, 2, 45, 76, 5, 3 };
-        int[] res = findSecondLargestAndSmallest(arr);
+        int[] res = findSecondLargestAndSmallestBrute(arr);
         System.out.println(Arrays.toString(res));
+        
         int[] resOptimal = findSecondLargestAndSmallestOptimal(arr);
         System.out.println(Arrays.toString(resOptimal));
     }
 
-    public static int[] findSecondLargestAndSmallest(int[] arr) {
+    public static int[] findSecondLargestAndSmallestBrute(int[] arr) {
         int largest = arr[0];
         int smallest = arr[1];
         int smallestIdx = 0;

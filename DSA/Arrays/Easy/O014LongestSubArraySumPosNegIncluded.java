@@ -57,7 +57,7 @@ public class O014LongestSubArraySumPosNegIncluded {
         return maxLength;
     }
 
-    public static int findLongestSubArrLengthOptimal(int[] arr, int k) {
+    public static int findLongestSubArrLengthOptimal (int[] arr, int k) {
         HashMap<Integer, Integer> map = new HashMap<>();
         int maxLength = 0;
         int n = arr.length;
