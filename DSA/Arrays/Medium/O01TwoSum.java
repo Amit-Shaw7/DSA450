@@ -10,6 +10,8 @@ public class O01TwoSum {
         findTwosumBrute(arr, target); // Brute - TC - O(N^2) || SC - O(1)
         findTwosumBetter(arr, target); // Better1 - TC - O(N + N) || SC - O(N)
         findTwosumBetter2(arr, target); // Better 2 - TC - O(N) || SC - O(N)
+
+        // Optimal only if yes no needs to be printed if indexes need to be printed this will not work
         findTwosumOptimal(arr, target);
     }
 
@@ -23,18 +25,22 @@ public class O01TwoSum {
                     if (arr[i] + arr[j] == target) {
                         System.out.println("YES");
                         return;
+                        // If asked to return
+                        // return new int[] {i , j};
                     }
                 }
             }
         }
         System.out.println("NO");
+        // If asked to return
+        // return new int[] {-1 , -1};
     }
 
     public static void findTwosumBetter(int[] arr, int target) {
         int n = arr.length;
         HashMap<Integer, Integer> map = new HashMap<>();
 
-        // We can skip it and do all in the same loop also for this refer third loop
+        // We can skip it and do all in the same loop also for this refer third approach
         for (int i = 0; i < n; i++) {
             map.put(arr[i], i);
         }
@@ -46,10 +52,14 @@ public class O01TwoSum {
             if (map.containsKey(moreNeeded)) {
                 System.out.println("YES");
                 return;
+                // If asked to return
+                // return new int[] {i , j};
             }
         }
 
         System.out.println("NO");
+        // If asked to return
+        // return new int[] {-1 , -1};
     }
 
     public static void findTwosumBetter2(int[] arr, int target) {
@@ -63,12 +73,16 @@ public class O01TwoSum {
             if (map.containsKey(moreNeeded)) {
                 System.out.println("YES");
                 return;
+                // If asked to return
+                // return new int[] {i , j};
             }
 
             map.put(arr[i], i);
         }
 
         System.out.println("NO");
+        // If asked to return
+        // return new int[] {-1,-1};
     }
 
     public static void findTwosumOptimal(int[] arr, int target) {
@@ -81,8 +95,10 @@ public class O01TwoSum {
             int sum = arr[left] + arr[right];
 
             if (sum == target) {
-                System.out.println("YES" + left + " " + right );
+                System.out.println("YES" + left + " " + right);
                 return;
+                // If asked to return
+                // return new int[] {left , right};
             } else if (target > sum) {
                 left++;
             } else {
@@ -91,5 +107,7 @@ public class O01TwoSum {
         }
 
         System.out.println("NO");
+        // If asked to return
+        // return new int[] {-1 , j-1};
     }
 }
