@@ -12,7 +12,7 @@ public class O013LongestSubarrWithSumK {
         System.out.println(length1);
 
         // Brute - TC - O(N^2) || SC - O(1)
-        int length4 = findLongestSubArrLengthBrute(arr, k);
+        int length4 = findLongestSubArrLengthBrute2(arr, k);
         System.out.println(length4);
 
         // Better - TC - O(N^2) || SC - O(1)

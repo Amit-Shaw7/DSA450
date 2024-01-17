@@ -12,7 +12,7 @@ public class O010MissingNummber {
         System.out.println(missingNum1);
 
         // Better - TC - O(N + M)
-        int missingNum2 = findMMissingNumBrute(arr, n);
+        int missingNum2 = findMMissingNumBetter(arr, n);
         System.out.println(missingNum2);
 
         // Optimal 1 - TC - O(N) || SC - O(1)

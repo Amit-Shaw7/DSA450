@@ -11,11 +11,11 @@ public class O09UnionOfTwoArrays {
         int[] arr1 = { 1, 2, 3, 7, 8, 9 };
         int[] arr2 = { 1, 2, 3, 4, 5, 6, 7 };
 
-        // Method - I - TC - O((m+n)(log(m+n))) || SC - 0(1) - We are using List to return not to solve
+        // Method - I - TC - O((m+n)(log(m+n))) || SC - 0(N) - We are using List to return not to solve hence using hashmap only
         List<Integer> union1 = findUnionUsingHashMap(arr1, arr2);
         System.out.println(union1);
 
-        // Method - II - TC - O((m+n)(log(m+n))) || SC - 0(1) - We are using List to return not to solve
+        // Method - II - TC - O((m+n)(log(m+n))) || SC - 0(N) - We are using List to return not to solve hence using only hashset
         List<Integer> union2 = findUnionUsingHashSet(arr1, arr2);
         System.out.println(union2);
 
