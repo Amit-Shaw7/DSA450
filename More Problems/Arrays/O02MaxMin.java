@@ -1,5 +1,3 @@
-package DSA.Arrays;
-
 public class O02MaxMin {
     public static int findMinMaxSum(int[] arr) {
         int sum = 0;
