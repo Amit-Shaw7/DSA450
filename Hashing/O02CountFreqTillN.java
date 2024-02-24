@@ -6,7 +6,6 @@ import java.util.HashMap;
 public class O02CountFreqTillN {
     public static void main(String[] args) {
         int n = 7;
-        int x = 20;
         int[] arr = { 10, 7, 9, 8, 14, 20, 6 };
 
         HashMap<Integer, Integer> map = new HashMap<>();

@@ -1,7 +1,5 @@
 package Basics;
 
-import java.util.Scanner;
-
 public class O07CheckPrime {
     public static boolean isPrime(int num) {
         if (num <= 1) {

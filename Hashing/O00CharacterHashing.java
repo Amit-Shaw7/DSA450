@@ -33,5 +33,6 @@ public class O00CharacterHashing {
             char ch = sc.next().charAt(0);
             System.out.println(hash[ch - 'a']);
         }
+        sc.close();
     }
 }
